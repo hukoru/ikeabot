@@ -20,15 +20,14 @@ NEWSPIDER_MODULE = 'crow.spiders'
 ITEM_PIPELINES = [
   'crow.pipelines.JsonWithEncodingPipeline',
   # mongo datbase 설정
-  'database.scrapy_mongodb.MongoDBPipeline',  # mongo datbase 설정
-  #'mongodb.scrapy_mongodb.MongoDBPipeline',
+ #'database.scrapy_mongodb.MongoDBPipeline',  # mongo datbase 설정
 ]
 
 
 ##############################################
 ## mongo database 설정                       ##
 ##############################################
-#MONGODB_URI = 'mongodb://localhost:27017'
+MONGODB_URI = 'mongodb://localhost:27017'
 #MONGODB_DATABASE = 'beers'
 #MONGODB_COLLECTION = 'places'
 #MONGODB_ADD_TIMESTAMP = True

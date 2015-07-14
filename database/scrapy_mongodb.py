@@ -52,9 +52,9 @@ class MongoDBPipeline():
         'fsync': False,
         'write_concern': 0,
         'database': 'beers',
-        'collection': 'cities',
+        'collection': 'product',
         'replica_set': None,
-        'unique_key': 'unique_key',
+        'unique_key': 'name',
         'buffer': None,
         'append_timestamp': False,
     }
