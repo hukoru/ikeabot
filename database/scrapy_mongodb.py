@@ -51,10 +51,10 @@ class MongoDBPipeline():
         'uri': 'mongodb://localhost:27017',
         'fsync': False,
         'write_concern': 0,
-        'database': 'beers',
+        'database': 'dutyfree',
         'collection': 'product',
         'replica_set': None,
-        'unique_key': 'name',
+        'unique_key': 'code',
         'buffer': None,
         'append_timestamp': False,
     }

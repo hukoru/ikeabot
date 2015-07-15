@@ -20,7 +20,7 @@ NEWSPIDER_MODULE = 'crow.spiders'
 ITEM_PIPELINES = [
   'crow.pipelines.JsonWithEncodingPipeline',
   # mongo datbase 설정
- #'database.scrapy_mongodb.MongoDBPipeline',  # mongo datbase 설정
+  #'database.scrapy_mongodb.MongoDBPipeline',  # mongo datbase 설정
 ]
 
 
