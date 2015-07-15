@@ -32,9 +32,9 @@ class PlaceSpider(scrapy.Spider):
                                'SelectedBrandCdList': '',
                                'SelectedBrandNmList': '',
                                'CategoryBrandLayerVal': '',
-                               'minprice': '23',
-                               'maxprice': '792',
-                               'listCount': '50'
+                               'minprice': '0',
+                               'maxprice': '9999',
+                               'listCount': '5000'
                      },
                      callback=self.parse) ]
 
@@ -54,6 +54,12 @@ class PlaceSpider(scrapy.Spider):
                 item = ProductItem()
                 name = place.select("td[@class='ln']/p[@class='name']/a/text()").extract()[0]
                 code = place.select("td[@class='ln']/p[@class='code']/a/@href").extract()[0]
+                ref_code = place.select("td[2]/p[@class='code']/a/text()").extract()[0]
+
+                ref_code_value = ref_code.lstrip("[")
+                ref_code_value = ref_code_value.rstrip("]")
+
+
                 image_url = place.select("td[1]/p[@class='photo']/a/img/@src").extract()[0]
 
                 brand_name = place.select("td[3]/a/text()").extract()[0]
@@ -66,7 +72,6 @@ class PlaceSpider(scrapy.Spider):
                 brand_code_value = re.search("javascript:BI.goBrandShop\('(.*?)'", brand_code)
                 sid = "lottedfs"
 
-                print create_date
 
                 item['name'] = name
                 item['code'] = code_value.group(1)
@@ -75,6 +80,7 @@ class PlaceSpider(scrapy.Spider):
                 item['price_won'] = price_won
                 item['brand_name'] = brand_name
                 item['brand_code'] = brand_code_value.group(1)
+                item['ref_code'] = ref_code_value
                 item['sid'] = sid
                 item['create_date'] = create_date
 

@@ -54,7 +54,7 @@ class MongoDBPipeline():
         'database': 'dutyfree',
         'collection': 'product',
         'replica_set': None,
-        'unique_key': 'code',
+        'unique_key': None,
         'buffer': None,
         'append_timestamp': False,
     }

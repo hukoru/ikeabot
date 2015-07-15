@@ -33,6 +33,7 @@ class PlaceItem(scrapy.Item):
 class ProductItem(scrapy.Item):
 
     sid = scrapy.Field()         #사이트 일련번호
+    ref_code = scrapy.Field()    #원본 아이템 코드
     name = scrapy.Field()        #아이템 이름
     image_url = scrapy.Field()   #이미지 url
     code = scrapy.Field()        #아이템 코드

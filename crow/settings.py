@@ -28,8 +28,8 @@ ITEM_PIPELINES = [
 ## mongo database 설정                       ##
 ##############################################
 MONGODB_URI = 'mongodb://localhost:27017'
-#MONGODB_DATABASE = 'beers'
-#MONGODB_COLLECTION = 'places'
+MONGODB_DATABASE = 'dutyfree'
+MONGODB_COLLECTION = 'product'
 #MONGODB_ADD_TIMESTAMP = True
 
 
