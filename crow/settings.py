@@ -15,21 +15,41 @@ NEWSPIDER_MODULE = 'crow.spiders'
 
 #CONCURRENT_REQUESTS = 5
 
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'crow2 (+http://www.yourdomain.com)'
-ITEM_PIPELINES = [
-  'crow.pipelines.JsonWithEncodingPipeline',
+#ITEM_PIPELINES = [
+#  'crow.pipelines.JsonWithEncodingPipeline',
+#  'scrapy.contrib.pipeline.images.ImagesPipeline': 99,
+#  'scrapy.pipelines.images.ImagesPipeline': 1},
   # mongo datbase 설정
   #'database.scrapy_mongodb.MongoDBPipeline',  # mongo datbase 설정
-]
+#]
+
+
+
+
+#ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1}
+
+# Where we store the images, in this case they will be stored
+# in E:/ImageGrabber/full directory. Change this to meet your needs.
+IMAGES_STORE = '/Users/hukoru/PycharmProjects/tripbot/images/'
+
+# Specify the min height and width of the image to download
+IMAGES_MIN_HEIGHT = 1
+IMAGES_MIN_WIDTH  = 1
+
+ITEM_PIPELINES = {
+	#'scrapy.contrib.pipeline.images.ImagesPipeline': 99,
+}
 
 
 ##############################################
 ## mongo database 설정                       ##
 ##############################################
-MONGODB_URI = 'mongodb://localhost:27017'
-MONGODB_DATABASE = 'dutyfree'
-MONGODB_COLLECTION = 'product'
+MONGODB_URI = 'mongodb://192.168.0.21:27017'
+MONGODB_DATABASE = 'trip'
+MONGODB_COLLECTION = 'restaurant'
 #MONGODB_ADD_TIMESTAMP = True
 
 
