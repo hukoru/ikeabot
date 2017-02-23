@@ -32,7 +32,6 @@ class TripSpider(scrapy.Spider):
 
         name = response.xpath('//title/text()').extract()[0]
 
-
         if((response.xpath('//*[@id="HEADING_GROUP"]/div/div[2]/div[2]/span/div/b/span/text()').extract() is None) == False):
             ranking = response.xpath('//*[@id="HEADING_GROUP"]/div/div[2]/div[2]/span/div/b/span/text()').extract()[0]
         else:
@@ -74,7 +73,6 @@ class TripSpider(scrapy.Spider):
         item['cover_image_height'] = cover_image_height
         item['content'] = content
         item['content2'] = content2
-
 
         item['image_urls'] = cover_image_url
 
