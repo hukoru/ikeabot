@@ -18,13 +18,13 @@ NEWSPIDER_MODULE = 'crow.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'crow2 (+http://www.yourdomain.com)'
-#ITEM_PIPELINES = [
-#  'crow.pipelines.JsonWithEncodingPipeline',
+ITEM_PIPELINES = [
+   'crow.pipelines.JsonWithEncodingPipeline',
 #  'scrapy.contrib.pipeline.images.ImagesPipeline': 99,
 #  'scrapy.pipelines.images.ImagesPipeline': 1},
   # mongo datbase 설정
-  #'database.scrapy_mongodb.MongoDBPipeline',  # mongo datbase 설정
-#]
+  'database.scrapy_mongodb.MongoDBPipeline',  # mongo datbase 설정
+]
 
 
 
@@ -47,7 +47,7 @@ ITEM_PIPELINES = {
 ##############################################
 ## mongo database 설정                       ##
 ##############################################
-MONGODB_URI = 'mongodb://192.168.0.21:27017'
+MONGODB_URI = 'mongodb://192.168.0.206:27017'
 MONGODB_DATABASE = 'trip'
 MONGODB_COLLECTION = 'restaurant'
 #MONGODB_ADD_TIMESTAMP = True

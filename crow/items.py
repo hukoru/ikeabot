@@ -11,8 +11,6 @@ import scrapy
 class RestaurantItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-
-    restaurant_id = scrapy.Field()
     title = scrapy.Field()
     link = scrapy.Field()
 
